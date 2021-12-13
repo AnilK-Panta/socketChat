@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Messanger</title>
+</head>
+<style>
+    body {
+        width: 800px;
+        margin: auto;
+        height: 100vh;
+        background-color: azure;
+        position: relative;
+    }
+
+    #message-container {
+        padding: 8px 16px;
+        background-color: rgb(80, 80, 80);
+        color: white;
+        width: fit-content;
+        max-width: 40%;
+        font-size: 1rem;
+        font-weight: bold;
+        border-radius: 10px 10px 10px 0;
+    }
+
+    #message-send-Container {
+        width: 100%;
+        display: flex;
+        gap: 20px;
+        background-color: white;
+        padding: .1rem;
+        position: absolute;
+        bottom: 0;
+    }
+
+    #typeMsg {
+        flex-grow: 1;
+        height: 40px;
+    }
+</style>
+
+<body>
+    <div id="message-container">Lorem ipsum dolor sit am</div>
+    <form id="message-send-Container">
+        <input type="text" id="typeMsg">
+        <button type="submit">Send</button>
+    </form>
+</body>
+
+</html>
