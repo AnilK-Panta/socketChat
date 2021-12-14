@@ -6,11 +6,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Messanger</title>
-    <script defer src="http://localhost:3000/socket.io/socket.io.js"></script>
-    <script defer src="script.js"></script>
+    <script src="http://localhost:8000/socket.io/socket.io.js"></script>
+    <script src="./js/client.js"></script>
 
 </head>
 <style>
+    * {
+        margin: 0;
+        padding: 0;
+        font-family: "Roboto", Georgia, Times, 'Times New Roman', serif;
+    }
+
     body {
         width: 800px;
         margin: auto;
@@ -19,25 +25,49 @@
         position: relative;
     }
 
+    .message-Wrap {
+        width: 100%;
+        height: calc(100% - 50px);
+        overflow-y: auto;
+    }
+
     #message-container {
         padding: 8px 16px;
-        background-color: rgb(80, 80, 80);
+
         color: white;
         width: fit-content;
         max-width: 40%;
         font-size: 1rem;
         font-weight: bold;
+        clear: both;
+        margin: 1rem;
+
+    }
+
+    .left {
         border-radius: 10px 10px 10px 0;
+        float: left;
+        background-color: rgb(124, 124, 124);
+    }
+
+    .right {
+        border-radius: 10px 10px 0px 10px;
+        float: right;
+        background-color: rgb(0, 139, 163);
     }
 
     #message-send-Container {
         width: 100%;
         display: flex;
-        gap: 20px;
+        /* gap: 20px; */
         background-color: white;
         padding: .1rem;
         position: absolute;
         bottom: 0;
+    }
+
+    #message-send-Container button {
+        width: 100px;
     }
 
     #typeMsg {
@@ -47,8 +77,14 @@
 </style>
 
 <body>
-    <div id="message-container">Lorem ipsum dolor sit am</div>
-    <form id="message-send-Container">
+    <div class="message-Wrap">
+        <div id="message-container" class="left">Hi how are you</div>
+        <div id="message-container" class="right">I am fine</div>
+        <div id="message-container" class="left">Hi how are you</div>
+        <div id="message-container" class="right">I am fine</div>
+    </div>
+
+    <form action="#" id="message-send-Container">
         <input type="text" id="typeMsg">
         <button type="submit">Send</button>
     </form>
