@@ -6,8 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Messanger</title>
-    <script src="http://localhost:8000/socket.io/socket.io.js"></script>
-    <script src="./js/client.js"></script>
+    <script defer src="http://localhost:8000/socket.io/socket.io.js"></script>
+    <script defer src="./js/client.js"></script>
 
 </head>
 <style>
@@ -31,10 +31,10 @@
         overflow-y: auto;
     }
 
-    #message-container {
+    .message-container {
         padding: 8px 16px;
 
-        color: white;
+        color: rgb(34, 34, 34);
         width: fit-content;
         max-width: 40%;
         font-size: 1rem;
@@ -78,10 +78,9 @@
 
 <body>
     <div class="message-Wrap">
-        <div id="message-container" class="left">Hi how are you</div>
-        <div id="message-container" class="right">I am fine</div>
-        <div id="message-container" class="left">Hi how are you</div>
-        <div id="message-container" class="right">I am fine</div>
+        <div id="message-container" class="message-container left" class="left">Hi how are you</div>
+        <div id="message-container" class="message-container right" class="left">Hi how are you</div>
+
     </div>
 
     <form action="#" id="message-send-Container">

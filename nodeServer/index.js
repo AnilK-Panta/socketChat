@@ -1,4 +1,4 @@
-const server = require("http").createServer();
+// const server = require("http").createServer();
 
 const io = require("socket.io")(8000, {
   cors: {
@@ -9,7 +9,7 @@ const users = {};
 
 io.on("connection", (socket) => {
   socket.on("new-user-joined", (name) => {
-    console.log("new-user", name);
+    console.log("My name is ", name);
     users[socket.id] = name;
     socket.broadcast.emit("user-joined", name);
   });
