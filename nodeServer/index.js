@@ -1,5 +1,3 @@
-// const server = require("http").createServer();
-
 const io = require("socket.io")(8000, {
   cors: {
     origin: "*",

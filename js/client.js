@@ -18,5 +18,19 @@ socket.emit("new-user-joined", name);
 console.log("name");
 socket.on("user-joined", (data) => {
   append(`${data} joined the chat`, "left");
-  console.log(data);
+});
+
+socket.on("receive", (data) => {
+  append(`${data.name}: ${data.message}`, "left");
+});
+socket.on("send", (data) => {
+  append(`${data.name}: ${data.message}`, "right");
+});
+
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const message = messageInput.value;
+  append(`You: ${message}`, "right");
+  socket.emit("send", message);
+  messageInput.value = "";
 });

@@ -17,6 +17,10 @@
         font-family: "Roboto", Georgia, Times, 'Times New Roman', serif;
     }
 
+    html {
+        behavior: smooth;
+    }
+
     body {
         width: 800px;
         margin: auto;
@@ -34,7 +38,7 @@
     .message-container {
         padding: 8px 16px;
 
-        color: rgb(34, 34, 34);
+        color: rgb(255, 255, 255);
         width: fit-content;
         max-width: 40%;
         font-size: 1rem;
@@ -77,9 +81,9 @@
 </style>
 
 <body>
-    <div class="message-Wrap">
-        <div id="message-container" class="message-container left" class="left">Hi how are you</div>
-        <div id="message-container" class="message-container right" class="left">Hi how are you</div>
+    <div class="message-Wrap" id="message-Wrap">
+        <!-- <div id="message-container" class="message-container left" class="left">Hi how are you</div>
+        <div id="message-container" class="message-container right" class="left">Hi how are you</div> -->
 
     </div>
 
@@ -87,6 +91,12 @@
         <input type="text" id="typeMsg">
         <button type="submit">Send</button>
     </form>
+    <script>
+        document.getElementById("message-send-Container").addEventListener('submit', function () {
+            document.getElementById("message-Wrap").scrollTo({ bottom: 100, behavior: 'smooth' });
+            console.log("hi")
+        })
+    </script>
 </body>
 
 </html>
